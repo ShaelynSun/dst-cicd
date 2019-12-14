@@ -1,6 +1,6 @@
-[![pipeline status](https://gitlab.com/ShaelynSun/dst-cicd/badges/master/pipeline.svg)](https://gitlab.com/ShaelynSun/dst-cicd/commits/master)
+[![pipeline status](https://gitlab.com/ShaelynSun/cicd-dst/badges/master/pipeline.svg)](https://gitlab.com/ShaelynSun/cicd-dst/commits/master)
 
-[![coverage report](https://gitlab.com/ShaelynSun/dst-cicd/badges/master/coverage.svg)](https://gitlab.com/ShaelynSun/dst-cicd/badges/master/coverage.svg?job=coverage)
+[![coverage report](https://gitlab.com/ShaelynSun/cicd-dst/badges/master/coverage.svg)](https://gitlab.com/ShaelynSun/cicd-dst/badges/master/coverage.svg?job=coverage)
 
 Name: Xinyue Sun (Shaelyn)
 
