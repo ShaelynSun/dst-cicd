@@ -31,7 +31,7 @@ describe("Stories",  () => {
         describe("when the id is valid", () => {
             it("should return the matching story", done => {
                 request(server)
-                    .get("/stories/5db37093d325820d812e9f77")
+                    .get("/stories/5df46280531ffc0ef9580b5e")
                     .set("Accept", "application/json")
                     .expect("Content-Type", /json/)
                     .expect(200)
@@ -224,11 +224,10 @@ describe("Stories",  () => {
         })
         after(() => {
             return request(server)
-                .get("/stories/5df46280531ffc0ef9580b5f")
+                .get("/stories/5df46280531ffc0ef9580b5e")
                 .expect(200)
                 .then(res => {
-                    expect(res.body[0]).to.have.property("title", "not for delete")
-                    expect(res.body[0]).to.have.property("content", "the demo's been edited.")
+                    expect(res.body[0]).to.have.property("title", "a weird baby")
                 })
         })
     }) // end-POST edit a previous story
