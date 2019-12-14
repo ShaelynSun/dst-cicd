@@ -1,0 +1,6 @@
+file:
+  - test/functional/api/storyTest.js
+  - test/functional/api/commentTest.js
+  - test/functional/api/userTest.js
+
+require: '@babel/register'

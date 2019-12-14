@@ -1,0 +1,69 @@
+# Node docker image on which this would be run
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+services:
+  - mongo
+
+variables:
+  NODE_ENV: 'test'
+
+# Pipeline:
+stages:
+  - install
+  - build
+  - deploy
+
+pages:
+  stage: deploy
+  dependencies:
+    - coverage
+  script:
+    - mv coverage public
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+
+# Jobs:
+
+install_dependencies:
+  stage: install
+  script:
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
+
+Build_and_Test:
+  stage: build
+  before_script:
+    - npm run clean
+  script:
+    - npm run compile:all
+    - npm test
+
+coverage:
+  stage: build
+  script:
+    - npm run test:report
+  coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
+  artifacts:
+    paths:
+      - coverage/
+
+deploy_staging:
+  image: ruby:latest
+  only:
+    - develop
+  stage: deploy
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+  script:
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME_STAGING --api-key=$HEROKU_API_KEY
+    - echo "Deployed to staging server"
