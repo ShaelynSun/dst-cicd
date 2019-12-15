@@ -11,8 +11,23 @@ This is a dynamic storytelling website. Everyone can post their own story, of co
 When uploaded, other users will see your incomplete story, and if he is interested, he will help you continue this story.
 (p.s. The main part means the original story uploaded. And the comments mean the continuation of the story.)
 The project has been deployed on heroku.
-'dynamicstorytelling.herokuapp.com'
-And the youtube channel site is 'https://youtu.be/A5uRIsin0Zc'
+
+Web
+
+>http://dst-staging-api.herokuapp.com
+
+>http://dst-prod-api.herokuapp.com
+
+Client:
+
+>http://dstvue-prod.surge.sh
+
+>http://dstvue-prod-api.herokuapp.com
+
+
+Assignment1: https://youtu.be/A5uRIsin0Zc
+
+Assignment2: https://youtu.be/Qv-1EhkNcw0
 
 Features:
 1.1 app.get('/stories', stories.findAll);
